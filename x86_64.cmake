@@ -1,0 +1,6 @@
+set(CMAKE_SYSTEM_PROCESSOR x86_64)
+set(CXX x86_64-elf-g++)
+set(CMAKE_C_COMPILER x86_64-elf-gcc)
+set(CMAKE_CXX_COMPILER x86_64-elf-g++)
+set(CMAKE_CXX_CFLAGS "-ffreestanding -Wall -Wextra -Werror -g")
+set(CMAKE_EXE_LINKER_FLAGS "-ffreestanding -nostdlib -T ${CMAKE_CURRENT_SOURCE_DIR}/x86_64.ld")
