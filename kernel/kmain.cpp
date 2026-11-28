@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <boot/limine.h>
+#include <serial.hpp>
 
 extern volatile uint64_t limine_base_revision[3];
 extern volatile limine_framebuffer_request framebuffer_request;
@@ -32,6 +33,9 @@ extern "C" void kmain() {
             // setup memory stuff
         }
     }
+
+    hzl::serial::init();
+    hzl::serial::log("\n\nHello world: %08X\n", 0x1337);
 
     halt();
 }
